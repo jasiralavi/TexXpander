@@ -12,7 +12,7 @@
 
 
 # Define base directory for TexXpander
-texxpander_dir="${HOME}/Softwares/texpander"
+texxpander_dir="${HOME}/Softwares/TexXpander"
 
 # Get window id, pass to getwindow pid to output the pid of current window
 pid=$(xdotool getwindowfocus getwindowpid)
