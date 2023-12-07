@@ -50,8 +50,10 @@ If I'm not in a web browser I'm in the terminal working in Vim. I've got some Te
  - Spaces are supported in file names. So you can have them named `sig 2.txt`, `sig long`, etc
 
 **Hiding files:**
+
 Sometimes you may need to temporarily hide some of the files or folders from being listed in the zenity window, may just to keep the list short.
-This can be easily achived by renaming the file or folder to start with a hyphen (-). 
+This can be easily achived by renaming the file or folder to start with a hyphen (-).
+
 In the example files given, file `-sig 2` and the folder `-eg2 hidden` along with all it contents will be hidden.
  - Add a hyphen (-) infront of a file name to hide the item from being listed in the popup window
  - Add a hyphen (-) infront of a folder name to hide it and all of its contents.
