@@ -43,9 +43,18 @@ After setting up the keyboard shortcut to launch TexXpander, to use TexXpander:
 - Type in `sig` and hit Enter (or click "Insert")
 - The contents of `~/Softwares/TexXpander/sig.txt` is pasted into your document
 
-Note that the files can be name with or without the .txt extension. So both `sig` and `sig.txt` works.
+If I'm not in a web browser I'm in the terminal working in Vim. I've got some TexXpander files that I use in Vim. The terminal works a little differently from other GUI apps in that you have to type `ctrl+shift+v` to paste stuff. In TexXpander.sh there is a check to see if the active window is a terminal. If so, it will paste using `ctrl+shift+v` if not then it will paste normally as `ctrl+v`.
 
-If I'm not in a web browser I'm in the terminal working in Vim. I've got some TexXpander files that I use in Vim. The terminal works a little differently from other GUI apps in that you have to type `ctrl+shift+v` to paste stuff. In TexXpander.sh there is a check to see if the active window is a terminal. If so, it will paste using `ctrl+shift+v` if not then it will paste normally as `ctrl+v`
+**File names:**
+ - Files can be named with or without the .txt extension. So both `sig` and `sig.txt` works.
+ - Spaces are supported in file names. So you can have them named `sig 2.txt`, `sig long`, etc
+
+**Hiding files:**
+Sometimes you may need to temporarily hide some of the files or folders from being listed in the zenity window, may just to keep the list short.
+This can be easily achived by renaming the file or folder to start with a hyphen (-). 
+In the example files given, file `-sig 2` and the folder `-eg2 hidden` along with all it contents will be hidden.
+ - Add a hyphen (-) infront of a file name to hide the item from being listed in the popup window
+ - Add a hyphen (-) infront of a folder name to hide it and all of its contents.
 
 ## History
 
