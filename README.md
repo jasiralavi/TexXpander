@@ -58,6 +58,11 @@ In the example files given, file `-sig 2` and the folder `-eg2 hidden` along wit
  - Add a hyphen (-) infront of a file name to hide the item from being listed in the popup window
  - Add a hyphen (-) infront of a folder name to hide it and all of its contents.
 
+**Few Tips**
+ - It's best to keep the files names short and abbreviated so that you can access them quickly by typing the abbreviation
+ - Keep expansions of similar types (say those related particular project) grouped under a folder. This also makes it easier to hide them if required.
+ - Short folder names (1-3 chars long) helps navigate faster with keyboard.
+
 ## History
 
 **Version 1.1 - Dec 7, 2023**
