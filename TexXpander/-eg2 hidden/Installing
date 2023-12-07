@@ -1,0 +1,12 @@
+# Installation
+
+1. Put TexXpander.sh somewhere on your system. I've chosen ~/Softwares folder.
+2. Create a keyboard shortcut that calls ~/Softwares/TexXpander.sh
+3. Create a ~/Softwares/TexXpander directory where you store text files for expanding abbreviations
+
+TexXpander relies on a couple command line tools:
+
+- xdotool
+- zenity
+- xsel
+

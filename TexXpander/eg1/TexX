@@ -1,0 +1,1 @@
+TexXpander is a simple text expander tool created for Linux users. It works off of text files that you put in your a directory of your choice. The default location is ~/Softwares/TexXpander folder. TexXpander is a bash script that uses xclip, xdotool, and zenity to let you type an abbreviation for something and it expands to whatever you have in the matching text file.
