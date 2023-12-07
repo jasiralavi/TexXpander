@@ -65,9 +65,9 @@ then
     # Paste text into current active window
     sleep 0.3
     if [ $is_terminal -eq 1 ]; then
-        xdotool key shift+Insert
-    else
 	xdotool key ctrl+shift+v
+    else
+        xdotool key shift+Insert
     fi
 
     # Restore the original value of the clipboard
