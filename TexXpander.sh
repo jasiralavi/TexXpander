@@ -2,8 +2,8 @@
 
 # TexXpander
 # Jasir Alavi
-# Version : 1.1
-# Released: 07 Dec 2023
+# Version : 1.3
+# Released: 19 Jul 2025
 # https://github.com/jasiralavi/TexXpander
 
 # Adapted from Texpander by leehblue

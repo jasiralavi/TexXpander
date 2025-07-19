@@ -65,7 +65,7 @@ In the example files given, file `-sig 2` and the folder `-eg2 hidden` along wit
 
 ## History
 
-**Version 1.1 - Dec 7, 2023**
+**Version 1.3 - 19 Jul 2025**
 
 - Fixed issue with inserting text to terminals.
 
