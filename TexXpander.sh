@@ -18,7 +18,7 @@ texxpander_dir="${HOME}/Softwares/TexXpander"
 pid=$(xdotool getwindowfocus getwindowpid)
 
 # Store text name of process based on pid of current window
-proc_name=$(cat /proc/$pid/comm)
+proc_name=$(cat "/proc/$pid/comm")
 
 # Check if the active window is a terminal
 if [[ $proc_name == "gnome-terminal" || $proc_name == "konsole" || $proc_name == "xterm" ]]; then
@@ -41,26 +41,24 @@ shopt -s globstar
 # Find regular files in base_dir, excluding those within directories or files that start with a "-", and pipe output to sed
 names_list=$(find "${base_dir}" -type d -name '-*' -prune -o -type f ! -name '-*' -print | sort | sed "s?^${base_dir}/??g")
 
-name=$(echo -e "${names_list}" | zenity --list --title=TexXpander --width=300 --height=400 --column=Abbreviations --ok-label="Insert")
-
-# If the user cancels the Zenity dialog, the script will exit
-if [ "$?" -ne 0 ]; then
-    exit
-fi
+name=$(echo -e "${names_list}" | zenity --list --title=TexXpander --width=300 --height=400 --column=Abbreviations --ok-label="Insert") || exit
 
 path="${base_dir}/${name}"
 
 if [ -f "${path}" ]
 then
-    # Preserve the current value of the clipboard
-    clipboard=$(xsel -b -o)
+    # Preserve the current value of the clipboard in a temporary file so
+    # that trailing newlines are retained when restoring later
+    clipboard_file=$(mktemp)
+    xsel -b -o > "$clipboard_file"
 
     # Put text in primary buffer for Shift+Insert pasting
-    echo -n "$(cat "$path")" | xsel -p -i
+    # Read the file directly so that trailing newlines are preserved
+    xsel -p -i < "$path"
 
     # Put text in clipboard selection for apps like Firefox that 
     # insist on using the clipboard for all pasting
-    echo -n "$(cat "$path")" | xsel -b -i
+    xsel -b -i < "$path"
 
     # Paste text into current active window
     sleep 0.3
@@ -72,5 +70,6 @@ then
 
     # Restore the original value of the clipboard
     sleep 0.5
-    echo $clipboard | xsel -b -i
+    xsel -b -i < "$clipboard_file"
+    rm -f "$clipboard_file"
 fi
